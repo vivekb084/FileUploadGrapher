@@ -10,53 +10,54 @@ export interface GraphModel extends GraphData,Document{
 export const GraphSchema: Schema = new Schema({
     TransactionData:[
         {
-            TransactionDate:{
+            Transaction_date:{
                 type:Date, 
-                required:true,
+                trim:true
             },
             Product:{
                 type:String, 
-                required:true,
+                trim:true
             },
             Price:{
                 type:Number, 
-                required:true,
+                trim:true
             },
             Payment_Type:{
                 type:String, 
-                required:true,
+                trim:true
             },
             Name:{
                 type:String, 
-                required:true,
+                trim:true
             },
             City:{
                 type:String, 
-                required:true,
+                trim:true
             },
             State:{
                 type:String, 
-                required:true,
+                trim:true
             },
             Country:{
                 type:String, 
-                required:true,
+                trim:true
             },
-            AccountCreated:{
+            Account_Created:{
+                type:Date, 
+                trim:true
+            },
+            Last_Login:{
                 type:Date, 
                 required:true,
-            },
-            LastLogin:{
-                type:Date, 
-                required:true,
-            },
-            Longitude:{
-                type:String, 
-                required:true,
+                trim:true
             },
             Latitude:{
                 type:String, 
-                required:true,
+                trim:true
+            },
+            Longitude:{
+                type:String, 
+                trim:true
             },
         }
     ]
