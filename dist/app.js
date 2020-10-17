@@ -17,12 +17,16 @@ const bodyParser = __importStar(require("body-parser"));
 const routes_1 = require("./routes");
 const mongoose_1 = require("mongoose");
 const envVariable_1 = require("./config/constants/envVariable");
+const path = require("path");
 class App {
     constructor() {
         this.app = express_1.default();
         this.app.use(helmet_1.default());
         this.config();
         this.mountRoutes();
+        // View Engine Setup 
+        this.app.set("views", path.join(__dirname, "views"));
+        this.app.set("view engine", "ejs");
     }
     config() {
         // DB connection

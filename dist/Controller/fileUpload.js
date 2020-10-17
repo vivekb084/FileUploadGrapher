@@ -12,6 +12,7 @@ const utils_1 = require("../utils");
 const errorMsg_1 = require("../config/constants/errorMsg");
 exports.fileUPload = (req, res) => __awaiter(this, void 0, void 0, function* () {
     try {
+        console.log("Insieef file upload req ", req);
         return utils_1.RespondSuccess(req, res, 200, {}, "File Added Successfully");
     }
     catch (err) {
