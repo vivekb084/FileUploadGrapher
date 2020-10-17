@@ -1,8 +1,18 @@
 import { Router } from 'express'
 import { fileUPload } from '../Controller/fileUpload'
 import multer from 'multer'
+import path = require("path")
 
-const multerupload = multer({ dest: 'uploads' })
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + path.extname(file.originalname)) //Appending extension
+    }
+  })
+
+const multerupload = multer({ storage: storage })
 
 export const router: Router = Router()
 
