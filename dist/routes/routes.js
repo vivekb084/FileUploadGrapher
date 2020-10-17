@@ -18,6 +18,7 @@ const storage = multer_1.default.diskStorage({
 const multerupload = multer_1.default({ storage: storage });
 exports.router = express_1.Router();
 /**********************Routes Starts*************************** */
+exports.router.get('/api/getFileData', fileUpload_1.getFileData);
 exports.router.post('/api/uploadFile', multerupload.single("fileKey"), fileUpload_1.fileUPload);
 /**********************Routes Ends*************************** */ 
 //# sourceMappingURL=routes.js.map
